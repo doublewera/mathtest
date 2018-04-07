@@ -1,2 +1,2 @@
 # mathtest
-Django learning
+Django & Git learning
