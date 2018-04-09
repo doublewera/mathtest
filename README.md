@@ -1,2 +1,2 @@
 # mathtest
-Django & Git learning
+Django & Git learning. Also cheap coffee
