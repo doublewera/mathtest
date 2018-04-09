@@ -1,4 +1,5 @@
 *.pyc
 migrations
+.DS_STORE
 db.sqlite3
 __pycache__
