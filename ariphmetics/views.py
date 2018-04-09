@@ -17,6 +17,7 @@ def index(request, question_count=1):
 
     # template = loader.get_template("index.html")
     context = {
+        "debug" : '%s' % question_count + str(len(questions)),
         "questions": questions[:question_count],
         "question_count": question_count,
         "suffix": "s" * (question_count > 1)

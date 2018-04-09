@@ -1,6 +1,5 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth.models import User # import table User
 
 
 class Question(models.Model):
@@ -13,6 +12,16 @@ class Question(models.Model):
 
 class Answer(models.Model):
     answer = models.IntegerField()
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        default=0)
+    question = models.ForeignKey(
+        Question,
+        on_delete=models.CASCADE,
+        default=0)
+    dt = models.DateTimeField(auto_now=True)
+    # user is now connected to db!
 
     def __str__(self):
         return str(self.answer)
