@@ -4,6 +4,13 @@
     <title>Template</title>
 </head>
 <body>
+    {% if users %}
+    <table>
+    {% for i in users %}
+    <tr><td><p>{{i}}</p></td></tr>
+    {% endfor %}
+    </table>
     <b><i>Template!</i></b>
+    {% endif %}
 </body>
 </html>
