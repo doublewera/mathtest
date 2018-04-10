@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from .models import Question, Answer
+from django.contrib.auth.models import User
 from random import sample
 
 
@@ -29,5 +30,18 @@ def solve(request):
     result = ""
     for key in request.POST.keys():
         result += "%s : %s<br />" % (key, request.POST[key])
-    return HttpResponse("Your answer was %s " % result)
+    author = get_object_or_404(User, username=request.POST["user"])
+    token = request.POST["csrfmiddlewaretoken"]
+    for qid in request.POST:
+        if qid[0] != 'a':
+            continue
+        q = get_object_or_404(Question, pk=int(qid[1:]))
+        answer = Answer.objects.create(
+            answer=request.POST[qid],
+            author=author,
+            question=q
+            )
+        answer.save()
+    return HttpResponse("Your answer was %s " % str(request.POST.keys()))
+
 
