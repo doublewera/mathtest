@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User # import table User
+from django.contrib.auth.models import User  # import table User
 
 
 class Question(models.Model):
@@ -16,12 +16,19 @@ class Answer(models.Model):
         User,
         on_delete=models.CASCADE,
         default=0)
+    # user is now connected to db!
     question = models.ForeignKey(
         Question,
         on_delete=models.CASCADE,
         default=0)
     dt = models.DateTimeField(auto_now=True)
-    # user is now connected to db!
 
     def __str__(self):
-        return str(self.answer)
+        return "%s %i. Suggested by %s at %s" % (
+            str(self.question),
+            self.answer_int,
+            self.author,
+            self.dt.strftime("%Y-%m-%d %H:%M:%S")
+            )
+
+
