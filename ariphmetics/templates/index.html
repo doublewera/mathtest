@@ -4,6 +4,7 @@
 {% if questions %}
 <form action="{% url 'ariphmetics:solve' %}" method='post'>
 {% csrf_token %} <!-- Защита от межсайтовой подделки запросов -->
+    <input type="hidden" name="user" id="user" value="{{user}}"/>
     <ul>
     {% for q in questions %}
         <li>

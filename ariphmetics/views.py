@@ -7,7 +7,12 @@ from random import sample
 def index(request, question_count=1):
     questions = Question.objects.order_by('id')
     context = {
-        "debug": '%s' % question_count + str(len(questions)),
+        "debug": 'user: %s, pass: %s, next: %s' % (
+            request.POST["username"],
+            request.POST["password"],
+            request.POST["next"]
+            ),
+        "user": request.POST["username"],
         "questions": sample(set(questions), question_count),
         "question_count": question_count,
         "suffix": "s" * (question_count > 1)
@@ -21,5 +26,8 @@ def solve(request):
     # return HttpResponse("Accepted %s" %
     # user_answer.choice_set.get(pk=request.POST['Choice']))
     # for key in .......
-    return HttpResponse("Your answer was %s " % str(request.POST.keys()))
+    result = ""
+    for key in request.POST.keys():
+        result += "%s : %s<br />" % (key, request.POST[key])
+    return HttpResponse("Your answer was %s " % result)
 
