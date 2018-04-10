@@ -8,10 +8,10 @@ from random import sample
 def index(request, question_count=1):
     questions = Question.objects.order_by('id')
     context = {
-        "debug": 'user: %s, pass: %s, next: %s' % (
+        "debug": 'user: %s, pass: %s' % (
             request.POST["username"],
             request.POST["password"],
-            request.POST["next"]
+#            request.POST["next"]
             ),
         "user": request.POST["username"],
         "questions": sample(set(questions), question_count),
