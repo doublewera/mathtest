@@ -46,4 +46,8 @@ def solve(request):
 
 
 def user_list(request):
-    return HttpResponse("<h2>here will be a user list</h2>")
+    users = User.objects.order_by('id')
+    context = {
+        "users": users,
+    }
+    return render(request, "user_list.html", context)
