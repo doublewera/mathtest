@@ -45,3 +45,5 @@ def solve(request):
     return HttpResponse("Your answer was %s " % str(request.POST.keys()))
 
 
+def user_list(request):
+    return HttpResponse("<h2>here will be a user list</h2>")
