@@ -5,8 +5,4 @@ migrations
 .DS_STORE
 __pycache__
 HEAD
-db.sqlite3
-=======
 .dir-locals.el
-#*#
-c632ef6b10f1a0955f16eadb28f14e536021a1c5
