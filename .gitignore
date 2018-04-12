@@ -1,6 +1,7 @@
 *.pyc
 *.swp
 .*.\~
+\#*\#
 migrations
 .DS_STORE
 __pycache__
