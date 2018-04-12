@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    {% if users %}
+    {% if listelems %}
     <table>
-    {% for i in users %}
-    <tr><td><p>{{i.username}}</p></td></tr>
+    {% for i in listelems %}
+    <tr><td><p>{{i}}</p></td></tr>
     {% endfor %}
     </table>
-    <b><i>Template!</i></b>
+    {% else %}
+    <p>List listelems is not passed</p>
     {% endif %}
 </body>
-</html>
