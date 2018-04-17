@@ -31,13 +31,13 @@ ALLOWED_HOSTS = ['192.168.56.101', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.staticfiles',
     'ariphmetics.apps.AriphmeticsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATICFILES_DIRS = ( 
- #             '/home/pi/pydjve/gitdjango/mathtest/ariphmetics/static',  
-  #            )
+

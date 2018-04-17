@@ -28,15 +28,11 @@ def index(request, question_count=1):
 
 
 def solve(request):
-    # user_answer = get_object_or_404(Answer)
-    # return HttpResponse("Accepted %s" %
-    # user_answer.choice_set.get(pk=request.POST['Choice']))
-    # for key in .......
-    result = ""
-    for key in request.POST.keys():
-        result += "%s : %s<br />" % (key, request.POST[key])
+   # result = ""
+   # for key in request.POST.keys():
+   #     result += "%s : %s<br />" % (key, request.POST[key])
     author = get_object_or_404(User, username=request.POST["user"])
-    token = request.POST["csrfmiddlewaretoken"]
+   # token = request.POST["csrfmiddlewaretoken"]
     for qid in request.POST:
         if qid[0] != 'a':
             continue
@@ -53,10 +49,10 @@ def db_print(request):
     questions = Question.objects.order_by('id')
     # returns a list of Question class objects
     # questions = [Question(), Question() ........]
-    quest_ans = {}
+    answers_dict = {}
     for q in questions:
-        quest_ans.update({q.question_text: q.right_answer})
-    print(quest_ans)
+        answers_dict.update({q.question_text: q.right_answer})
+    print(answers_dict)
     answers = Answer.objects.order_by('id')
     ans_by_u = {} 
     for i in answers:
@@ -65,7 +61,7 @@ def db_print(request):
         answer = int(i[i.index('=') + 1: i.index('. ')].strip())        
         user = i[i.index('by ') + 3: i.index(' at ')].strip()
         date_time = i[i.index(' at ') + 4:].strip()
-        right_answer = quest_ans[question]
+        right_answer = answers_dict[question]
         if ans_by_u.get(user):
             ans_by_u[user].append([
                 
