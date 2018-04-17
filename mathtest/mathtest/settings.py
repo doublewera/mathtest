@@ -120,3 +120,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = '~/django_git/django/django/mathtest/mathtest/root_static'
