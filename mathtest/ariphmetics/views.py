@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.http import HttpResponse
 from .models import Question, Answer
 from django.contrib.auth.models import User
-from random import choice as r
+from random import sample
 import django.contrib.staticfiles
 from django.template import RequestContext
 from django.shortcuts import render_to_response
