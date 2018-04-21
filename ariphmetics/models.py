@@ -26,7 +26,7 @@ class Answer(models.Model):
     def __str__(self):
         return "%s %i. Suggested by %s at %s" % (
             str(self.question),
-            self.answer_int,
+            self.answer,
             self.author,
             self.dt.strftime("%Y-%m-%d %H:%M:%S")
             )

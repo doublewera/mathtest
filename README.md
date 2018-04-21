@@ -1,7 +1,3 @@
 # mathtest
-Django & Git learning. Also cheap coffee
-
-HEAD
-keke
-kuku
-master
+Django & Git learning. Also cheap coffee.
+Stable branch.

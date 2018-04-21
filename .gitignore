@@ -1,6 +1,7 @@
 *.pyc
 *.swp
 .*.\~
+\#*\#
 .DS_STORE
 __pycache__
 .dir-locals.el
