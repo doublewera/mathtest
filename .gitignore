@@ -2,8 +2,6 @@
 *.swp
 .*.\~
 \#*\#
-migrations
 .DS_STORE
 __pycache__
-HEAD
 .dir-locals.el
