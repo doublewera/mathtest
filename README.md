@@ -1,3 +1,2 @@
 # mathtest
-Django learning
-I fix css
+Django & Git learning. Also cheap coffee

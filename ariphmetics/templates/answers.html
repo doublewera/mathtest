@@ -1,0 +1,39 @@
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/answers.css' %}" type="text/css" media="screen" />
+
+</head>
+
+<body>
+	
+	<table align="center" width="100%" border="1">
+		<tr>
+			<th>Имя пользователя</th>
+			<th>Вопрос</th>
+			<th>Ответ</th>
+			<th>Дата</th>
+		</tr>
+		{% for name, dt in user_answers.items %}
+			{% for question, answer, right_answer, date, answer_count in dt %} 
+
+				<tr>
+					{% if forloop.first %}
+						<td rowspan={{answer_count}} align="center" > {{name}} </td>
+					{% endif %}
+					<td>{{question}}</td>
+					{% if right_answer == answer %}
+					<td bgcolor="#00FF00">{{answer}}</td>
+					{% else %}
+						<td bgcolor="Red">{{answer}} (правильный ответ:{{right_answer}})</td>
+	
+					{% endif %}
+					<td>{{date}}</td>
+			</tr>
+		{% endfor %}
+		{% endfor %}
+	</table>
+	<img src="{% static 'img.jpg' %}" />
+
+
+
+</body>

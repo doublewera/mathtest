@@ -1,0 +1,11 @@
+body {
+	padding-left: 5px;
+}
+
+table {
+	border-collapse: collapse; /*убираем пустые промежутки между ячейками*/
+	border: 3px solid grey; /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+}
+th {border: 3px solid grey;}
+td {border: 1px solid grey;}
+
