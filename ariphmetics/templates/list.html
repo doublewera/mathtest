@@ -1,14 +1,18 @@
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
-    {% if listelems %}
-    <table>
-    {% for i in listelems %}
-    <tr><td><p>{{i}}</p></td></tr>
-    {% endfor %}
-    </table>
-    {% else %}
-    <p>List listelems is not passed</p>
-    {% endif %}
-</body>
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	{% load static %}
+    	<link rel="stylesheet" type="text/css" href="{% static 'ariphmetics/user_list.css'%}" />
+    </head>
+    <body>
+    	{% if listelems %}
+    	<table>
+    	{% for i in listelems %}
+    	<tr><td><p>{{i}}</p></td></tr>
+    	{% endfor %}
+    	</table>
+    	{% else %}
+    	<p>List listelems is not passed</p>
+    	{% endif %}
+    </body>
+</html>

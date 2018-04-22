@@ -12,3 +12,6 @@ urlpatterns = [
     path('user_list', views.user_list),
     path('solve/', views.solve, name='solve'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()
