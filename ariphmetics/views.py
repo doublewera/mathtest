@@ -59,10 +59,12 @@ def solve(request):
         answer.save()
     return HttpResponse("Your solutions have been recorded to DB.")
 
+
 def answer_list(request):
     #answers = Answers.objects.filter(author="wera")
     context = {"listelems": Answer.objects.all()}
     return render(request, "list.html", context)
+
 
 def user_list(request):
     users = User.objects.order_by('id')
@@ -70,3 +72,7 @@ def user_list(request):
         "listelems": users,
     }
     return render(request, "list.html", context)
+
+
+def testcss(request):
+    return render(request, "test.html", {})
