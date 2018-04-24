@@ -5,3 +5,4 @@
 .DS_STORE
 __pycache__
 .dir-locals.el
+.project
